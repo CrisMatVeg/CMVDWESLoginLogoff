@@ -1,4 +1,4 @@
-USE DBCMVDWESLoginLogoffTema5;
+USE DBCMVDWESLoginLogoff;
 
 CREATE TABLE IF NOT EXISTS T02_Departamento (
     T02_CodDepartamento VARCHAR(3) PRIMARY KEY,

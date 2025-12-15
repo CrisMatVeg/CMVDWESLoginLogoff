@@ -6,7 +6,7 @@
  * Author:  cristian.matveg
  * Created: 30 oct. 2025
  */
-use DBCMVDWESLoginLogoffTema5;
+use DBCMVDWESLoginLogoff;
 
 insert into T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenDeNegocio,T02_FechaBajaDepartamento) values
         ('INF','Departamento de informatica.',now(),1235.5,null),

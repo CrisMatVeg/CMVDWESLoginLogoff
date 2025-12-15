@@ -6,8 +6,8 @@
  * Author:  cristian.matveg
  * Created: 30 oct. 2025
  */
-CREATE DATABASE IF NOT EXISTS DBCMVDWESLoginLogoffTema5;
-USE DBCMVDWESLoginLogoffTema5;
+CREATE DATABASE IF NOT EXISTS DBCMVDWESLoginLogoff;
+USE DBCMVDWESLoginLogoff;
 
 CREATE TABLE IF NOT EXISTS T02_Departamento (
     T02_CodDepartamento VARCHAR(3) PRIMARY KEY,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS T01_Usuarios (
     T01_ImagenUsuario VARCHAR(255) default null
 );
 
-CREATE USER IF NOT EXISTS 'userCMVDWESLoginLogoffTema5'@'%' IDENTIFIED BY 'paso';
-GRANT ALL PRIVILEGES ON T02_Departamento TO 'userCMVDWESLoginLogoffTema5'@'%';
-GRANT ALL PRIVILEGES ON T01_Usuarios TO 'userCMVDWESLoginLogoffTema5'@'%';
+CREATE USER IF NOT EXISTS 'userCMVDWESLoginLogoff'@'%' IDENTIFIED BY 'paso';
+GRANT ALL PRIVILEGES ON T02_Departamento TO 'userCMVDWESLoginLogoff'@'%';
+GRANT ALL PRIVILEGES ON T01_Usuarios TO 'userCMVDWESLoginLogoff'@'%';
 FLUSH PRIVILEGES;
