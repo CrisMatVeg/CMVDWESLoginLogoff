@@ -1,6 +1,3 @@
-<?php
-    require_once $view['inicioPublico'];
-?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -94,24 +91,16 @@
     </head>
     <body>
         <div class="container">
-            <header>
-                <div class="logo">
-                    <span class="owl" aria-hidden="true"></span>
-                    <span>Login Logoff<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">— Inicio Público</span></span>
-                </div>
-            </header>
-
-            <main>
-                <h1>Layout</h1>
-            </main>
-
+        <?php
+            require_once $view[$_SESSION['paginaEnCurso']];
+        ?>
             <footer>
                 <div class="footer-grid">
                     <div>© 2025-26 IES Los Sauces. Todos los derechos reservados. <a href="../CMVDWESProyectoDWES/indexProyectoDWES.php" title="Inicio">Cristian Mateos Vega</a></div>
                     <div>
                         <a href="https://es.duolingo.com/" target="_blank" title="Duolingo">Pagina Imitada</a>
                         ·
-                        <a href="https://github.com/CrisMatVeg/CMVDWESLoginLogoffTema5" target="_blank" title="Github"><i class="fa-brands fa-github fa-2xl"></i></a>
+                        <a href="https://github.com/CrisMatVeg/CMVDWESLoginLogoff" target="_blank" title="Github"><i class="fa-brands fa-github fa-2xl"></i></a>
                     </div>
                 </div>
             </footer>
