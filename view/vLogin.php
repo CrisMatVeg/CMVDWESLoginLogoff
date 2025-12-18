@@ -1,7 +1,7 @@
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
-        <span>Login Logoff Tema 5<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
+        <span>Login Logoff<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
             Login</span></span>
     </div>
     <form>
@@ -27,7 +27,7 @@
             ?>
             <div>
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-                    <input type="text" name="usuario" placeholder="Usuario" id="usuario" class="required" value="">
+                    <input type="text" name="codUsuario" placeholder="Usuario" id="codUsuario" class="required" value="">
                     <input type="password" name="password" placeholder="Contraseña" id="password" value="">
 
                     <div>
@@ -35,6 +35,7 @@
                         <input type="submit" name="accion" value="entrar" class="btn primary">
 
                         <!-- Input submit Cancelar -->
+                        <input type="hidden" name="paginaAnterior" value="inicioPublico">
                         <input type="submit" name="accion" value="cancelar" class="btn primary">
                     </div>
                 </form>

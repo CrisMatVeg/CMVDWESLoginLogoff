@@ -7,13 +7,14 @@
 
 //DESARROLLO
         define("HOST", "local.ieslossauces.es");
-        define("DBNAME", "DBCMVDWESLoginLogoffTema5");
-        define("USERNAME", "userCMVDWESLoginLogoffTema5");
+        define("DBNAME", "DBCMVDWESLoginLogoff");
+        define("USERNAME", "userCMVDWESLoginLogoff");
         define("PASSWORD", "paso");
         define("DSN", "mysql:host=" . HOST . "; dbname=" . DBNAME);
 //EXPLOTACION
         /* define("HOST", "localhost");
-        define("DBNAME", "DBCMVDWESProyectoTema5");
-        define("USERNAME", "userCMVDWESProyectoTema5");
+        define("DBNAME", "DBCMVDWESLoginLogoff");
+        define("USERNAME", "userCMVDWESLoginLogoff");
         define("PASSWORD", "paso1234!");
         define("DSN", "mysql:host=" . HOST . "; dbname=" . DBNAME); */
+?>

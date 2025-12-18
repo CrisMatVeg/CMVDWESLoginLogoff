@@ -38,8 +38,8 @@ body {
 
 main{
     text-align:center;
-    padding-left:20px;
-    padding-right:20px;
+    padding: 100px 20px 20px;
+    min-height: calc(100vh - 128px);
 }
 
 header {
@@ -48,7 +48,13 @@ header {
     justify-content: space-between;
     padding: 1rem 0;
     padding-left:20px;
-    padding-right:20px
+    padding-right:20px;
+    position:fixed;
+    width: 100vw;
+    top:0;
+    height: 95px;
+    background: var(--bg);
+    z-index: 1000;
 }
 
 .logo {
@@ -143,9 +149,10 @@ footer {
     padding: 2rem 0;
     color: var(--muted);
     font-size: .9rem;
-    position:fixed;
+    position:static;
     bottom:0;
     width: 100%;
+    height: 80px;
 }
 
 .footer-grid {

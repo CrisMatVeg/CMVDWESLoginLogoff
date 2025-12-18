@@ -1,11 +1,12 @@
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
-        <span>Login Logoff Tema 5<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
+        <span>Login Logoff<span style="color:var(--muted);font-weight:600;margin-left:6px;font-size:.9rem">—
             Detalle</span></span>
     </div>
     <form method="post" action="indexLoginLogoff.php">
-            <input type="submit" name="accion" value="cancelar" class="btn primary">
+        <input type="hidden" name="paginaAnterior" value="inicioPrivado">
+        <input type="submit" name="accion" value="cancelar" class="btn primary">
     </form>
 </header>
 

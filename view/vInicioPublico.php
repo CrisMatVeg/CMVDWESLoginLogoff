@@ -5,7 +5,6 @@
     </div>
     <nav>
         <form method="post" action="indexLoginLogoff.php">
-            <!-- <input type="hidden" name="paginaEnCurso" value="Login"> -->
             <input type="submit" name="accion" value="Login" class="cta">
         </form>
     </nav>

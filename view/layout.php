@@ -37,6 +37,41 @@
                 --body: 'mNunito';
             }
 
+            footer {
+                background: var(--brand-green);
+                margin-top: 3rem;
+                padding: 2rem 0;
+                color: var(--muted);
+                font-size: .9rem;
+                position:static;
+                bottom:0;
+                width: 100%;
+            }
+
+            pre,td{
+                text-align: start;
+                padding-left:10px;
+            }
+
+            main{
+                background-color: var(--bg);
+                text-align:center;
+                padding: 100px 20px 20px;
+            }
+
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem 0;
+                padding-left:20px;
+                padding-right:20px;
+                position:fixed;
+                top:0;
+                background: var(--bg);
+                z-index: 1000;
+            }
+
             .logo .owl {
                 width: 60px;
                 height: 60px;
