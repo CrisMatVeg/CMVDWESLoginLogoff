@@ -12,11 +12,13 @@
     // Procesar botones
     if (isset($_REQUEST['accion'])) {
         switch($_REQUEST['accion']) {
-            case 'cancelar':
+            case 'Cancelar':
+            case 'Volver':
+            case 'Cerrar Sesión':
                 $_SESSION['paginaAnterior'] = $_REQUEST["paginaAnterior"]?? 'inicioPublico';
                 $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
                 break;
-            case 'detalle':
+            case 'Detalle':
                 $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
                 $_SESSION['paginaEnCurso'] = 'Detalle';
                 break;

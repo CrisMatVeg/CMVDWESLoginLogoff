@@ -32,11 +32,11 @@
 
                     <div>
                         <!-- Input submit Entrar -->
-                        <input type="submit" name="accion" value="entrar" class="btn primary">
+                        <input type="submit" name="accion" value="Entrar" class="btn primary">
 
                         <!-- Input submit Cancelar -->
                         <input type="hidden" name="paginaAnterior" value="inicioPublico">
-                        <input type="submit" name="accion" value="cancelar" class="btn primary">
+                        <input type="submit" name="accion" value="Cancelar" class="btn primary">
                     </div>
                 </form>
             </div>

@@ -27,12 +27,15 @@
                 --accent: #4a9bff;
                 --footera: #A5ED6E;
                 --footertext: #D7FFB8;
-                --bg: #f7fbff;
+                --campocolor: #f7f7f7;
                 --text: #1a1a1a;
+                --btnsazul: #1fc2ff;
                 --muted: #6b7280;
                 --max-width: 100vw;
-                --btnshadow:#58A700;
-
+                --btnshadowblue: #1AA8EB;
+                --btnshadowgreen:#58A700;
+                --btngrisshadow: #cecece;
+                --bg: #f7fbff;
                 --headline: 'mFeather';
                 --body: 'mNunito';
             }
@@ -93,11 +96,22 @@
                 display: flex;
                 justify-content:center;
                 align-content:center;
-                gap:10px;
+                flex-direction:column;
+                flex-wrap:wrap;
+                gap:20px;
             }
 
             form *{
                 cursor: pointer;
+            }
+
+            form *{
+                justify-content:center;
+            }
+
+            form div{
+                display: flex;
+                justify-content:space-between;
             }
 
             .labels{
@@ -110,7 +124,7 @@
 
             .cta {
                 width: 120px;
-                box-shadow: 0px 5px 0px 0px var(--btnshadow);
+                box-shadow: 0px 5px 0px 0px var(--btnshadowgreen);
             }
 
             .hero div img{
@@ -121,6 +135,21 @@
             .selected-idioma img{
                 border:4px solid var(--accent);
                 border-radius:10px; 
+            }
+
+            .btn.primary {
+                width: auto;
+                background: var(--btnsazul);
+                color: white;
+                box-shadow: 0px 5px 0px 0px var(--btnshadowblue);
+            }
+
+            .btn.secondary {
+                width: 120px;
+                background: transparent;
+                border: 2px solid var(--btngrisshadow);
+                color: var(--btnsazul);
+                box-shadow: 0px 5px 0px 0px var(--btngrisshadow);
             }
         </style>
     </head>

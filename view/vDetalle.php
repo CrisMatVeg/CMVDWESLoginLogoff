@@ -6,7 +6,7 @@
     </div>
     <form method="post" action="indexLoginLogoff.php">
         <input type="hidden" name="paginaAnterior" value="inicioPrivado">
-        <input type="submit" name="accion" value="cancelar" class="btn primary">
+        <input type="submit" name="accion" value="Volver" class="btn primary">
     </form>
 </header>
 

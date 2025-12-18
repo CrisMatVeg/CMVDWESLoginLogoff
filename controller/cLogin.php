@@ -1,11 +1,10 @@
 <?php
     require_once __DIR__ . '/../model/UsuarioPDO.php';
     
-    // Solo procesamos si se pulsa “entrar”
-    if (isset($_REQUEST['accion']) && $_REQUEST['accion'] == 'entrar') {
+    if (isset($_REQUEST['accion']) && $_REQUEST['accion'] == 'Entrar') {
         $codUsuario = $_REQUEST['codUsuario']==null ? '' : $_REQUEST['codUsuario'];
         $password = $_REQUEST['password']==null ? '' : $codUsuario.$_REQUEST['password'];
-        // Llamamos al modelo
+        // Llamar al modelo
         $usuarioPDO = new UsuarioPDO();
         $usuario = $usuarioPDO->validarUsuario($codUsuario, $password);
         if ($usuario != false) {

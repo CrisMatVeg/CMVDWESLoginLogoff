@@ -7,7 +7,7 @@
     <nav>
         <form method="post" action="indexLoginLogoff.php">
             <input type="hidden" name="paginaAnterior" value="Login">
-            <input type="submit" name="accion" value="cancelar" class="btn primary">
+            <input type="submit" name="accion" value="Cerrar Sesión" class="btn primary">
         </form>
     </nav>
 </header>
@@ -15,15 +15,19 @@
 <main>
     <?php
         $usuarioActual=$_SESSION['usuarioActualDWESLoginLogoff'];
-        echo "<h1>Bienvenido " . $usuarioActual->descUsuario . "</h1>";
-        echo "<h2>Esta el la " . $usuarioActual->numConexiones . "ª vez que se conecta.</h2>";
-        if($usuarioActual->numConexiones>1){
-            echo "<h2>Usted se conectó por última vez el ".$usuarioActual->fechaHoraUltimaConexionAnterior->format('d')." del ".$usuarioActual->fechaHoraUltimaConexionAnterior->format('m'). " de " .$usuarioActual->fechaHoraUltimaConexionAnterior->format('Y'). " a las " .$usuarioActual->fechaHoraUltimaConexionAnterior->format('H').":".$usuarioActual->fechaHoraUltimaConexionAnterior->format('i')."</h2>";
+        $codUsuario=$usuarioActual->getCodUsuario();
+        $numConexiones=$usuarioActual->getNumConexiones();
+        $fechaHoraUltimaConexionAnterior=$usuarioActual->getFechaHoraUltimaConexionAnterior();
+        $descUsuario=$usuarioActual->getDescUsuario();
+        echo "<h1>Bienvenido " . $descUsuario . "</h1>";
+        echo "<h2>Esta el la " . $numConexiones . "ª vez que se conecta.</h2>";
+        if($numConexiones>1){
+            echo "<h2>Usted se conectó por última vez el ".$fechaHoraUltimaConexionAnterior->format('d')." del ".$fechaHoraUltimaConexionAnterior->format('m'). " de " .$fechaHoraUltimaConexionAnterior->format('Y'). " a las " .$fechaHoraUltimaConexionAnterior->format('H').":".$fechaHoraUltimaConexionAnterior->format('i')."</h2>";
         }else{
             echo '<h2>BIENVENIDO!</h2>';
         }
     ?>
     <form method="post" action="indexLoginLogoff.php">
-        <input type="submit" name="accion" value='detalle' class="btn primary">
+        <input type="submit" name="accion" value='Detalle' class="btn primary">
     </form>
 </main>

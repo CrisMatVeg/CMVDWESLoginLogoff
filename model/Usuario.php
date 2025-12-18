@@ -1,17 +1,31 @@
 <?php
     class Usuario {
-        public $codUsuario;
-        public $password;
-        public $descUsuario;
-        public $numConexiones;
-        public $fechaHoraUltimaConexion;
-        public $perfil;
-        public $imagenUsuario;
-        public $fechaHoraUltimaConexionAnterior;
+        private $codUsuario;
+        private $password;
+        private $descUsuario;
+        private $numConexiones;
+        private $fechaHoraUltimaConexion;
+        private $fechaHoraUltimaConexionAnterior;
+        private $perfil;
+        private $imagenUsuario;
+        
+        public function __construct($codUsuario,$password,$descUsuario,$numConexiones,$fechaHoraUltimaConexion,$perfil,$imagenUsuario,$fechaHoraUltimaConexionAnterior) {
+            $this->codUsuario = $codUsuario;
+            $this->password = $password;
+            $this->descUsuario = $descUsuario;
+            $this->numConexiones = $numConexiones;
+            $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
+            $this->perfil = $perfil;
+            $this->imagenUsuario = $imagenUsuario==null?'':$imagenUsuario;
+            $this->fechaHoraUltimaConexionAnterior=$fechaHoraUltimaConexionAnterior;
+        }
 
         // getters (mínimos necesarios)
         public function getCodUsuario() {
              return $this->codUsuario; 
+        }
+        public function getPassword() { 
+            return $this->password; 
         }
         public function getDescUsuario() { 
             return $this->descUsuario; 
@@ -24,6 +38,9 @@
         }
         public function getFechaHoraUltimaConexion() { 
             return $this->fechaHoraUltimaConexion; 
+        }
+        public function setFechaHoraUltimaConexion($fecha) {
+            $this->fechaHoraUltimaConexion = $fecha;
         }
         public function getFechaHoraUltimaConexionAnterior() { 
             return $this->fechaHoraUltimaConexionAnterior; 

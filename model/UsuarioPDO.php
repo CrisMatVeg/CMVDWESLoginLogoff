@@ -4,33 +4,41 @@
     class UsuarioPDO {
         public function validarUsuario($codUsuario, $password) {
             $conexion = DBPDO::getConexion();
+
             $sql = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :usuario AND T01_Password = SHA2(:password,256)";
-            $consulta = $conexion->prepare($sql);
-            $consulta->execute([':usuario' => $codUsuario, ':password' => $password]);
-            // Devuelve false si no existe
-            $fila = $consulta->fetch();
-            if ($fila == false) {
-                return false;
+            $parametros= [':usuario' => $codUsuario, ':password' => $password];
+            $fila = DBPDO::ejecutarConsulta($sql,$conexion,$parametros);
+
+            if ($fila != false) {
+                // Usuario válido
+                $usuario = new Usuario(
+                    $fila['T01_CodUsuario'],
+                    $fila['T01_Password'],
+                    $fila['T01_DescUsuario'],
+                    $fila['T01_NumConexiones'],
+                    null,
+                    $fila['T01_Perfil'],
+                    $fila['T01_ImagenUsuario'],
+                    new DateTime($fila['T01_FechaHoraUltimaConexion'])
+                );
+                
+                self::actualizarUltimaConexionYUsuario($usuario,$conexion);
+                $_SESSION['usuarioActualDWESLoginLogoff'] = $usuario;
+                $_SESSION['paginaEnCurso'] = 'inicioPrivado';
             }
-            // Actualizamos conexiones
-            $usuario=new Usuario();
-            $usuario-> fechaHoraUltimaConexionAnterior=new DateTime($fila['T01_FechaHoraUltimaConexion']);
+        }
+        public static function actualizarUltimaConexionYUsuario($usuario,$conexion){
+            $codUsuario=$usuario->getCodUsuario();
+            $password=$usuario->getPassword();
             $sqlUpdate = "UPDATE T01_Usuarios SET T01_NumConexiones = T01_NumConexiones + 1, T01_FechaHoraUltimaConexion = NOW() WHERE T01_CodUsuario = :usuario";
-            $consulta = $conexion->prepare($sqlUpdate);
-            $consulta->execute([':usuario' => $codUsuario]);
-            $sql2 = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :usuario AND T01_Password = SHA2(:password,256)";
-            $consulta = $conexion->prepare($sql2);
-            $consulta->execute([':usuario' => $codUsuario, ':password' => $password]);
-            $fila2 = $consulta->fetch();
-            $usuario->codUsuario = $fila2['T01_CodUsuario'];
-            $usuario->password = $fila2['T01_Password'];
-            $usuario->descUsuario = $fila2['T01_DescUsuario'];
-            $usuario->numConexiones = $fila2['T01_NumConexiones'];
-            $usuario->fechaHoraUltimaConexion = new DateTime($fila2['T01_FechaHoraUltimaConexion']);
-            $usuario->perfil = $fila2['T01_Perfil'];
-            $usuario->imagenUsuario = $fila2['T01_ImagenUsuario'];
-            // Devolvemos el usuario
-            return $usuario;
+            $parametrosUpdate=[':usuario' => $codUsuario];
+            DBPDO::ejecutarConsulta($sqlUpdate,$conexion,$parametrosUpdate);
+
+            $sqlSelect = "SELECT * FROM T01_Usuarios WHERE T01_CodUsuario = :usuario AND T01_Password = :password";
+            $parametrosSelect=[':usuario' => $codUsuario, ':password' => $password];
+            $resultadoSelect = DBPDO::ejecutarConsulta($sqlSelect,$conexion,$parametrosSelect);
+            
+            $usuario->setFechaHoraUltimaConexion(new DateTime($resultadoSelect['T01_FechaHoraUltimaConexion']));
         }
     }
 ?>
