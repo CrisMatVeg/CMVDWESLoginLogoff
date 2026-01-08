@@ -19,8 +19,7 @@
             $this->imagenUsuario = $imagenUsuario==null?'':$imagenUsuario;
             $this->fechaHoraUltimaConexionAnterior=$fechaHoraUltimaConexionAnterior;
         }
-
-        // getters (mínimos necesarios)
+        
         public function getCodUsuario() {
              return $this->codUsuario; 
         }

@@ -1,7 +1,7 @@
 <?php
     require_once ("./config/confAPP.php");
     require_once ("./config/confDBPDO.php");
-    require_once ('./model/Usuario.php');
+    require_once './model/Usuario.php';
     session_start();
 
     // Página por defecto
@@ -9,26 +9,22 @@
         $_SESSION['paginaEnCurso'] = 'inicioPublico';
     }
 
-    // Procesar botones
-    if (isset($_REQUEST['accion'])) {
-        switch($_REQUEST['accion']) {
-            case 'Cancelar':
-            case 'Volver':
-            case 'Cerrar Sesión':
-                $_SESSION['paginaAnterior'] = $_REQUEST["paginaAnterior"]?? 'inicioPublico';
-                $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-                break;
-            case 'Detalle':
-                $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-                $_SESSION['paginaEnCurso'] = 'Detalle';
-                break;
-            case 'Login':
-                $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-                $_SESSION['paginaEnCurso'] = 'Login';
-                break;
-        }
+    // Si se envía una nueva página hacia delante o hacia atrás
+    if (isset($_REQUEST['paginaDestino'])) {
+        $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+        $_SESSION['paginaEnCurso'] = trim($_REQUEST['paginaDestino']);
     }
 
-    // Cargamos controller
+    if (isset($_REQUEST['atras'])) {
+        if($_REQUEST['atras']=="Cerrar Sesión"){
+            session_unset();
+            session_destroy();
+            session_start();
+        }
+        $_SESSION['paginaAnterior'] = $_REQUEST['paginaAnterior'];
+        $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    }
+
+    // Cargar controller
     require_once ($controller[$_SESSION['paginaEnCurso']]);
 ?>

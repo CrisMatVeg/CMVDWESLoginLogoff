@@ -5,7 +5,7 @@
             Login</span></span>
     </div>
     <form>
-        <input type="submit" name="registrarse" value='Registrarse' id="registrarse" class="btn secondary">
+        <input type="submit" name="paginaDestino" value='Registrarse' id="registrarse" class="btn secondary">
     </form>
 </header>
 
@@ -32,11 +32,11 @@
 
                     <div>
                         <!-- Input submit Entrar -->
-                        <input type="submit" name="accion" value="Entrar" class="btn primary">
+                        <input type="submit" name="paginaDestino" value="inicioPrivado" class="btn primary">
 
-                        <!-- Input submit Cancelar -->
+                        <!-- Input submit Cancelar con un valor oculto para que sepa cual es la anterior exacta al pulsar este boton-->
                         <input type="hidden" name="paginaAnterior" value="inicioPublico">
-                        <input type="submit" name="accion" value="Cancelar" class="btn primary">
+                        <input type="submit" name="atras" value="Cancelar" class="btn primary">
                     </div>
                 </form>
             </div>

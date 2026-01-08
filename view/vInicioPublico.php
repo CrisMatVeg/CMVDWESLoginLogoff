@@ -5,7 +5,7 @@
     </div>
     <nav>
         <form method="post" action="indexLoginLogoff.php">
-            <input type="submit" name="accion" value="Login" class="cta">
+            <input type="submit" name="paginaDestino" value="Login" class="cta">
         </form>
     </nav>
 </header>
