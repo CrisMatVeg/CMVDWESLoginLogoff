@@ -14,15 +14,10 @@
 
 <main>
     <?php
-        $usuarioActual=$_SESSION['usuarioActualDWESLoginLogoff'];
-        $codUsuario=$usuarioActual->getCodUsuario();
-        $numConexiones=$usuarioActual->getNumConexiones();
-        $fechaHoraUltimaConexionAnterior=$usuarioActual->getFechaHoraUltimaConexionAnterior();
-        $descUsuario=$usuarioActual->getDescUsuario();
-        echo "<h1>Bienvenido " . $descUsuario . "</h1>";
-        echo "<h2>Esta el la " . $numConexiones + 1 . "ª vez que se conecta.</h2>";
-        if($numConexiones!=0){
-            echo "<h2>Usted se conectó por última vez el ".$fechaHoraUltimaConexionAnterior->format('d')." del ".$fechaHoraUltimaConexionAnterior->format('m'). " de " .$fechaHoraUltimaConexionAnterior->format('Y'). " a las " .$fechaHoraUltimaConexionAnterior->format('H').":".$fechaHoraUltimaConexionAnterior->format('i')."</h2>";
+        echo "<h1>Bienvenido " . $avInicioPrivado["descUsuario"] . "</h1>";
+        echo "<h2>Esta el la " . $avInicioPrivado["numConexiones"] + 1 . "ª vez que se conecta.</h2>";
+        if($avInicioPrivado["numConexiones"]!=0){
+            echo "<h2>Usted se conectó por última vez el ".$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('d')." del ".$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('m'). " de " .$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('Y'). " a las " .$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('H').":".$avInicioPrivado["fechaHoraUltimaConexionAnterior"]->format('i')."</h2>";
         }else{
             echo '<h2>BIENVENIDO!</h2>';
         }
