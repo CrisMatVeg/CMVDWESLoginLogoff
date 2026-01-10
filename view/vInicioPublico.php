@@ -12,4 +12,10 @@
 
 <main>
     <h1>Inicio Público</h1>
+    <div class="imagenes">
+        <img src="./webroot/images/navegacion.png" alt="">
+        <img src="./webroot/images/ficheros.png" alt="">
+        <img src="./webroot/images/clases.png" alt="">
+        <img src="./webroot/images/modelofisico.png" alt="">
+    </div>
 </main>
