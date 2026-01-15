@@ -1,3 +1,25 @@
+<?php
+/**
+ * Vista Login/Logoff
+ *
+ * Este archivo es la plantilla principal de la interfaz de login y logoff.
+ * Incluye la estructura HTML, enlaces a hojas de estilo y scripts,
+ * definición de fuentes y variables CSS, y carga dinámica de la vista
+ * correspondiente según la página en curso en la sesión.
+ *
+ * Dependencias:
+ * - $view[$_SESSION['paginaEnCurso']] → archivo PHP de vista que se carga dinámicamente
+ *
+ * Funcionalidad:
+ * - Define la estructura HTML5 con `<header>`, `<main>` y `<footer>`
+ * - Carga CSS externo y define estilos internos para el login/logoff
+ * - Muestra enlaces a recursos externos (Font Awesome, Duolingo, Github)
+ *
+ * @package Vistas
+ * @author Cristian Mateos
+ * @version 1.0
+ */
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -35,7 +57,7 @@
                 --btnshadowblue: #1AA8EB;
                 --btnshadowgreen:#58A700;
                 --btngrisshadow: #cecece;
-                --bg: #f7fbff;
+                --bg: #ffffff;
                 --headline: 'mFeather';
                 --body: 'mNunito';
             }
@@ -92,6 +114,40 @@
                 height: 30px;
             }
 
+            .imgwip{
+                width:100px;
+                height:100px;
+            }
+
+            .ipbotones{
+                display:flex;
+                flex-direction:row;
+            }
+
+            .errorcontenedor{
+                color: red;
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .error.titulo{
+                color:red;
+            }
+
+            .error.mensaje{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:start;
+                margin-bottom:20px;
+            }
+
+            .mainwip{
+                display: flex;
+                justify-content:center;
+                align-items:center;
+            }
+
             form{
                 display: flex;
                 justify-content:center;
@@ -145,11 +201,7 @@
             }
 
             .btn.secondary {
-                width: 120px;
-                background: transparent;
                 border: 2px solid var(--btngrisshadow);
-                color: var(--btnsazul);
-                box-shadow: 0px 5px 0px 0px var(--btngrisshadow);
             }
         </style>
     </head>

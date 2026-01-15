@@ -1,3 +1,35 @@
+<?php
+/**
+ * Vista Parcial: Inicio Privado
+ *
+ * Este archivo muestra la interfaz de la página de inicio privado
+ * de la aplicación Login/Logoff. Se encarga de mostrar un mensaje
+ * de bienvenida al usuario, información sobre sus conexiones, 
+ * y proporciona un botón para acceder a la página de detalle.
+ *
+ * Funcionalidad:
+ * - `<header>`: muestra el logo y un formulario con botón "Cerrar Sesión".
+ * - `<main>`: muestra:
+ *      - Bienvenida al usuario con su nombre (`descUsuario`)
+ *      - Número de conexiones realizadas (`numConexiones`)
+ *      - Fecha y hora de la penúltima conexión (`fechaHoraUltimaConexionAnterior`) si aplica
+ *      - Botón para ir a la sección de "Detalle"
+ *
+ * Elementos importantes:
+ * - Logo con clase `.owl` y texto “Login Logoff — Inicio Privado”
+ * - Formulario de cierre de sesión con botón "Cerrar Sesión"
+ * - Información dinámica extraída del array `$avInicioPrivado`
+ * - Botón de navegación a `Detalle`
+ *
+ * Dependencias:
+ * - Variable PHP `$avInicioPrivado` con datos del usuario
+ * - Estilos CSS externos e internos
+ *
+ * @package Vistas
+ * @author Cristian Mateos
+ * @version 1.0
+ */
+?>
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
@@ -23,7 +55,10 @@
         }
         echo '<br>'
     ?>
-    <form method="post">
-        <input type="submit" name="paginaDestino" value='Detalle' class="btn primary">
+    <form method="post" class="ipbotones">
+        <input type="submit" name="detalle" value='Detalle' class="btn primary">
+        <input type="submit" name="rest" value='REST' class="btn primary">
+        <input type="submit" name="mantenimiento" value='Mantenimiento Departamentos' class="btn primary">
+        <input type="submit" name="error" value='Error' class="btn primary">
     </form>
 </main>

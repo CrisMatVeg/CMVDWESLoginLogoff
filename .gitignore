@@ -8,3 +8,4 @@
 .vscode-server/
 .vscode/
 nbproject/
+.phpdoc/

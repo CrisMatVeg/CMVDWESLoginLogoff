@@ -1,3 +1,32 @@
+<?php
+/**
+ * Vista Parcial: Login
+ *
+ * Este archivo contiene la sección de cabecera y contenido principal
+ * para la página de Login de la aplicación Login/Logoff.
+ *
+ * Funcionalidad:
+ * - `<header>`: muestra el logo y un formulario con botón "Registrarse".
+ * - `<main>`: contiene la sección principal (`.hero`) con el formulario
+ *   de login que permite introducir usuario y contraseña, y botones de acción.
+ *
+ * Elementos importantes:
+ * - Logo con la clase `.owl` y texto “Login Logoff — Login”
+ * - Formulario de registro con botón "Registrarse"
+ * - Formulario de login con campos `codUsuario` y `password`
+ * - Botones de acción:
+ *   - "Entrar" (`paginaDestino = inicioPrivado`)
+ *   - "Cancelar" (`atras` con valor de página anterior)
+ *
+ * Dependencias:
+ * - Estilos CSS externos e internos
+ * - Acciones dirigidas a `indexLoginLogoff.php`
+ *
+ * @package Vistas
+ * @author Cristian Mateos
+ * @version 1.0
+ */
+?>
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
@@ -5,7 +34,7 @@
             Login</span></span>
     </div>
     <form>
-        <input type="submit" name="paginaDestino" value='Registrarse' id="registrarse" class="btn secondary">
+        <input type="submit" name="registro" value='Registrarse' id="registro" class="btn secondary">
     </form>
 </header>
 
@@ -26,7 +55,7 @@
                 }
             ?>
             <div>
-                <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                <form method="post" action="indexLoginLogoff.php">
                     <input type="text" name="codUsuario" placeholder="Usuario" id="codUsuario" class="required" value="">
                     <input type="password" name="password" placeholder="Contraseña" id="password" value="">
 

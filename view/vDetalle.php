@@ -1,3 +1,39 @@
+<?php
+/**
+ * Vista Parcial: Detalle
+ *
+ * Este archivo muestra la página de detalle de la aplicación Login/Logoff.
+ * Su propósito principal es mostrar información de las superglobales de PHP
+ * ($_SESSION, $_COOKIE, $_SERVER, $_ENV, $_REQUEST, $_GET, $_POST, $_FILES)
+ * y toda la configuración del servidor mediante `phpinfo()`.
+ *
+ * Funcionalidad:
+ * - `<header>`: logo y formulario con botón "Volver" para regresar a inicio privado.
+ * - `<main>`: sección `.hero` que despliega:
+ *      - Título del contenido: “Superglobales y phpinfo()”
+ *      - Tablas HTML para cada superglobal, mostrando clave y valor
+ *      - Salida completa de `phpinfo()` al final
+ *
+ * Elementos importantes:
+ * - Logo con clase `.owl` y texto “Login Logoff — Detalle”
+ * - Formulario con botón "Volver" (`paginaAnterior = inicioPrivado`)
+ * - Tablas de superglobales para depuración
+ * - phpinfo() para información completa del servidor y PHP
+ *
+ * Dependencias:
+ * - Variables de superglobales de PHP
+ * - Estilos CSS externos/internos
+ * - Archivo PHP de acción del formulario (`indexLoginLogoff.php`)
+ *
+ * Advertencia:
+ * - Esta vista debe usarse solo en entorno de desarrollo o pruebas, 
+ *   ya que expone información sensible de la sesión y del servidor.
+ *
+ * @package Vistas
+ * @author Cristian Mateos
+ * @version 1.0
+ */
+?>
 <header>
     <div class="logo">
         <span class="owl" aria-hidden="true"></span>
